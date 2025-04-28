@@ -9,6 +9,7 @@ RUN apt update && apt install -y --no-install-recommends \
     libtk8.6 \
     libgl1-mesa-glx \
     libglib2.0-0 \
+    ffmpeg \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
