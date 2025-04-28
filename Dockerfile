@@ -7,6 +7,7 @@ RUN apt update && apt install -y --no-install-recommends \
     gcc \
     g++ \
     libtk8.6 \
+    libgl1-mesa-glx \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
