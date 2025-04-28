@@ -6,6 +6,7 @@ RUN apt update && apt install -y --no-install-recommends \
     libicu-dev \
     gcc \
     g++ \
+    libtk8.6 \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
