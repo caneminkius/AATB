@@ -1,6 +1,10 @@
 FROM python:3.10-slim
 
+<<<<<<< HEAD
 RUN apt update && apt install -y --no-install-recommends \
+=======
+RUN apt update && apt install -y \
+>>>>>>> 85bb86c (add)
     pkg-config \
     git \
     libicu-dev \
@@ -17,8 +21,16 @@ WORKDIR /app
 
 COPY requirements.txt .
 
+<<<<<<< HEAD
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
 CMD ["python", "main.py"]
+=======
+RUN pip install -r requirements.txt
+
+COPY . .
+
+CMD ["python", "main.py"]
+>>>>>>> 85bb86c (add)

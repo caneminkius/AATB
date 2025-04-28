@@ -4,5 +4,5 @@ pyICU
 pycld2
 morfessor
 polyglot
-torch
+torch==2.0.0
 git+https://github.com/LuisMayo/objection_engine.git
