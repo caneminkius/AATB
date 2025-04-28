@@ -17,7 +17,8 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install Python packages into /install
-RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt \
+    && rm -rf /root/.cache/pip
 
 # ===== Stage 2: Final stage =====
 FROM python:3.10-slim
