@@ -1,7 +1,9 @@
 FROM python:3.10-slim
 
-# Install system dependencies for pyICU and pycld2
-RUN apt-get update && apt-get install -y \
+# Install system dependencies for Python, pyICU and pycld2
+RUN apt update && apt install -y \
+    pkg-config \
+    git \
     libicu-dev \
     gcc \
     g++ \
@@ -14,7 +16,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install Python dependencies
-RUN apt update && apt install -y git && pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the application code
 COPY . .
