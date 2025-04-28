@@ -8,6 +8,7 @@ RUN apt update && apt install -y --no-install-recommends \
     g++ \
     libtk8.6 \
     libgl1-mesa-glx \
+    libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
@@ -15,8 +16,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requirements.txt \
-    && rm -rf /root/.cache /tmp/* /usr/local/lib/python3.10/dist-packages/pip
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
